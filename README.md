@@ -1,2 +1,0 @@
-# beginredirectapp
-Begin app
