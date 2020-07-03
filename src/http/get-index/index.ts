@@ -1,6 +1,6 @@
 
 // Forward requester to a new path
-export async function handler(req: object) {
+export async function handler(req: {queryStringParameters}) {
   let location = "https://www.learninpublic.org"
   let qsp = req.queryStringParameters
   if (qsp && qsp.a) location += `/?a=${qsp.a}`
