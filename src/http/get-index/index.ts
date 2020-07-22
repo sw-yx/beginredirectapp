@@ -1,9 +1,9 @@
 
 // Forward requester to a new path
-export async function handler(req: {queryStringParameters: { a?: string }}) {
-  let location = "https://www.learninpublic.org"
+export async function handler(req: {queryStringParameters: Record<string,string>}) {
+  let location = "https://www.learninpublic.org/"
   let qsp = req.queryStringParameters
-  if (qsp && qsp.a) location += `/?a=${qsp.a}`
+  if (qsp) location += `?${(new URLSearchParams(qsp)).toString()}`
   return {
     statusCode: 302,
     headers: {
